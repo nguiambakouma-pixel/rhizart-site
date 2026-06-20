@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demande de devis — RHIZART Studio</title>
+  <meta name="description" content="Décrivez votre projet créatif à RHIZART. Identité visuelle, print, motion design, illustration — nous vous répondons sous 24h." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="devis.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet" />
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body class="devis-page">
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-rh">RH</span><span class="logo-iz">IZ</span><span class="logo-art">ART</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#services" data-i18n="nav-services">Services</a>
+        <a href="portfolio.html" data-i18n="nav-projets">Portfolio</a>
+        <a href="index.html#processus" data-i18n="nav-processus">Processus</a>
+        <a href="contact.html" data-i18n="nav-contact">Contact</a>
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="fr" data-i18n="nav-lang-fr">FR</button>
+          <button class="lang-btn" data-lang="en" data-i18n="nav-lang-en">EN</button>
+        </div>
+      </nav>
+      <div class="lang-toggle desktop-lang">
+        <button class="lang-btn active" data-lang="fr" data-i18n="nav-lang-fr">FR</button>
+        <button class="lang-btn" data-lang="en" data-i18n="nav-lang-en">EN</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE DEVIS -->
+  <main class="devis-main">
+    <div class="devis-layout">
+
+      <!-- ===== ASIDE GAUCHE ===== -->
+      <aside class="devis-aside">
+        <div class="aside-inner">
+
+          <div class="aside-top">
+            <p class="aside-eyebrow">Démarrer un projet</p>
+            <h1 class="aside-title">Donnons vie à votre vision créative</h1>
+            <p class="aside-sub">Remplissez ce formulaire en <strong>3 minutes</strong>. Notre équipe créative vous répond avec une proposition sous <strong>24h</strong>.</p>
+          </div>
+
+          <!-- Étapes -->
+          <div class="aside-steps">
+            <div class="aside-step active" id="step-indicator-1">
+              <div class="step-dot">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>1</span>
+              </div>
+              <div class="step-label">
+                <p class="step-name">Votre projet</p>
+                <p class="step-desc">Type & description</p>
+              </div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="aside-step" id="step-indicator-2">
+              <div class="step-dot">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>2</span>
+              </div>
+              <div class="step-label">
+                <p class="step-name">Style & budget</p>
+                <p class="step-desc">Direction & enveloppe</p>
+              </div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="aside-step" id="step-indicator-3">
+              <div class="step-dot">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>3</span>
+              </div>
+              <div class="step-label">
+                <p class="step-name">Vos coordonnées</p>
+                <p class="step-desc">Pour vous recontacter</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Garanties -->
+          <div class="aside-garanties">
+            <div class="garantie-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Réponse garantie sous 24h
+            </div>
+            <div class="garantie-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Devis gratuit, sans engagement
+            </div>
+            <div class="garantie-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Fichiers sources inclus
+            </div>
+            <div class="garantie-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Révisions illimitées
+            </div>
+          </div>
+
+          <!-- Contact rapide -->
+          <div class="aside-contact">
+            <p>Préférez-vous nous parler directement ?</p>
+            <a href="https://wa.me/237600000000" class="whatsapp-btn">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              WhatsApp
+            </a>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- ===== FORMULAIRE DROITE ===== -->
+      <section class="devis-form-area">
+
+        <!-- Barre de progression -->
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" id="progressBar" style="width:33%"></div>
+        </div>
+        <p class="progress-label" id="progressLabel">Étape 1 sur 3</p>
+
+        <form class="devis-form" id="devisForm" novalidate>
+
+          <!-- ============================
+               ÉTAPE 1 — Le projet
+               ============================ -->
+          <div class="form-step active" id="step1">
+
+            <div class="step-header">
+              <h2>Quel est votre projet créatif ?</h2>
+              <p>Dites-nous le type de création dont vous avez besoin.</p>
+            </div>
+
+            <!-- Type de projet -->
+            <div class="form-group">
+              <label class="form-label required">
+                Type de projet
+                <span class="error-msg" id="err-type"></span>
+              </label>
+              <div class="project-types" id="projectTypes">
+
+                <div class="type-card" data-value="identite-visuelle">
+                  <div class="type-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+                  </div>
+                  <p class="type-name">Identité visuelle</p>
+                  <p class="type-desc">Logo, charte, brand book</p>
+                </div>
+
+                <div class="type-card" data-value="print">
+                  <div class="type-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                  </div>
+                  <p class="type-name">Print & supports</p>
+                  <p class="type-desc">Affiches, flyers, brochures</p>
+                </div>
+
+                <div class="type-card" data-value="motion">
+                  <div class="type-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  </div>
+                  <p class="type-name">Motion design</p>
+                  <p class="type-desc">Animation, vidéo, reels</p>
+                </div>
+
+                <div class="type-card" data-value="illustration">
+                  <div class="type-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+                  </div>
+                  <p class="type-name">Illustration</p>
+                  <p class="type-desc">Digitale, personnage, cover</p>
+                </div>
+
+                <div class="type-card" data-value="social-media">
+                  <div class="type-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                  </div>
+                  <p class="type-name">Réseaux sociaux</p>
+                  <p class="type-desc">Posts, stories, templates</p>
+                </div>
+
+                <div class="type-card" data-value="packaging">
+                  <div class="type-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                  </div>
+                  <p class="type-name">Packaging</p>
+                  <p class="type-desc">Emballage, étiquettes</p>
+                </div>
+
+              </div>
+              <input type="hidden" id="projectType" name="projectType" />
+            </div>
+
+            <!-- Nom du projet -->
+            <div class="form-group">
+              <label class="form-label required" for="projectName">
+                Titre ou nom du projet
+                <span class="error-msg" id="err-name"></span>
+              </label>
+              <input
+                type="text"
+                id="projectName"
+                name="projectName"
+                class="form-input"
+                placeholder="Ex : Logo pour ma boulangerie, Affiche concert…"
+                maxlength="100"
+              />
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+              <label class="form-label required" for="projectDesc">
+                Décrivez votre projet
+                <span class="char-count" id="descCount">0 / 500</span>
+                <span class="error-msg" id="err-desc"></span>
+              </label>
+              <textarea
+                id="projectDesc"
+                name="projectDesc"
+                class="form-input form-textarea"
+                placeholder="Décrivez votre activité, votre cible, ce que vous voulez transmettre avec cette création, vos idées, contraintes particulières…"
+                maxlength="500"
+                rows="5"
+              ></textarea>
+            </div>
+
+            <!-- Livrables attendus -->
+            <div class="form-group">
+              <label class="form-label">Livrables souhaités <span class="optional">(optionnel)</span></label>
+              <div class="features-check">
+                <label class="check-item"><input type="checkbox" name="livrables" value="fichiers-sources" /><span>Fichiers sources (AI, PSD, Figma)</span></label>
+                <label class="check-item"><input type="checkbox" name="livrables" value="formats-print" /><span>Formats print (PDF haute def)</span></label>
+                <label class="check-item"><input type="checkbox" name="livrables" value="formats-web" /><span>Formats web (PNG, SVG, WebP)</span></label>
+                <label class="check-item"><input type="checkbox" name="livrables" value="formats-video" /><span>Formats vidéo (MP4, GIF)</span></label>
+                <label class="check-item"><input type="checkbox" name="livrables" value="charte" /><span>Charte graphique complète</span></label>
+                <label class="check-item"><input type="checkbox" name="livrables" value="mockups" /><span>Mockups de présentation</span></label>
+              </div>
+            </div>
+
+            <div class="form-nav">
+              <span></span>
+              <button type="button" class="btn btn-primary" id="next1">
+                Continuer
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ============================
+               ÉTAPE 2 — Style & Budget
+               ============================ -->
+          <div class="form-step" id="step2">
+
+            <div class="step-header">
+              <h2>Style visuel & budget</h2>
+              <p>Ces informations guident nos créatifs vers la bonne direction artistique.</p>
+            </div>
+
+            <!-- Direction artistique -->
+            <div class="form-group">
+              <label class="form-label">Direction artistique souhaitée <span class="optional">(optionnel)</span></label>
+              <div class="style-options">
+                <label class="style-card">
+                  <input type="radio" name="style" value="minimaliste" />
+                  <div class="style-inner">
+                    <span class="style-preview style-minimal"></span>
+                    <p class="style-name">Minimaliste</p>
+                    <p class="style-desc">Épuré, espacé, élégant</p>
+                  </div>
+                </label>
+                <label class="style-card">
+                  <input type="radio" name="style" value="moderne" />
+                  <div class="style-inner">
+                    <span class="style-preview style-moderne"></span>
+                    <p class="style-name">Moderne & Bold</p>
+                    <p class="style-desc">Typographie forte, contraste</p>
+                  </div>
+                </label>
+                <label class="style-card">
+                  <input type="radio" name="style" value="luxe" />
+                  <div class="style-inner">
+                    <span class="style-preview style-luxe"></span>
+                    <p class="style-name">Luxe & Premium</p>
+                    <p class="style-desc">Raffiné, sophistiqué</p>
+                  </div>
+                </label>
+                <label class="style-card">
+                  <input type="radio" name="style" value="coloré" />
+                  <div class="style-inner">
+                    <span class="style-preview style-color"></span>
+                    <p class="style-name">Coloré & Dynamique</p>
+                    <p class="style-desc">Vibrant, expressif, jeune</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Budget -->
+            <div class="form-group">
+              <label class="form-label required">
+                Enveloppe budgétaire
+                <span class="error-msg" id="err-budget"></span>
+              </label>
+              <div class="budget-options">
+                <label class="radio-card">
+                  <input type="radio" name="budget" value="moins-50k" />
+                  <div class="radio-inner">
+                    <p class="radio-title">Moins de 50 000 F</p>
+                    <p class="radio-sub">Flyer, post, logo simple</p>
+                  </div>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="budget" value="50k-150k" />
+                  <div class="radio-inner">
+                    <p class="radio-title">50 000 — 150 000 F</p>
+                    <p class="radio-sub">Logo + charte, affiche pro</p>
+                  </div>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="budget" value="150k-500k" />
+                  <div class="radio-inner">
+                    <p class="radio-title">150 000 — 500 000 F</p>
+                    <p class="radio-sub">Identité complète, motion</p>
+                  </div>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="budget" value="500k-plus" />
+                  <div class="radio-inner">
+                    <p class="radio-title">Plus de 500 000 F</p>
+                    <p class="radio-sub">Projet d'envergure, branding total</p>
+                  </div>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="budget" value="indefini" />
+                  <div class="radio-inner">
+                    <p class="radio-title">Budget à définir</p>
+                    <p class="radio-sub">Je veux d'abord une estimation</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Délai -->
+            <div class="form-group">
+              <label class="form-label required">
+                Délai souhaité
+                <span class="error-msg" id="err-delai"></span>
+              </label>
+              <div class="delai-options">
+                <label class="radio-card radio-card-sm">
+                  <input type="radio" name="delai" value="urgent" />
+                  <div class="radio-inner">
+                    <p class="radio-title">🔥 Urgent</p>
+                    <p class="radio-sub">Moins de 72h</p>
+                  </div>
+                </label>
+                <label class="radio-card radio-card-sm">
+                  <input type="radio" name="delai" value="1semaine" />
+                  <div class="radio-inner">
+                    <p class="radio-title">1 semaine</p>
+                    <p class="radio-sub">Projet standard</p>
+                  </div>
+                </label>
+                <label class="radio-card radio-card-sm">
+                  <input type="radio" name="delai" value="2-4semaines" />
+                  <div class="radio-inner">
+                    <p class="radio-title">2 à 4 semaines</p>
+                    <p class="radio-sub">Projet complet</p>
+                  </div>
+                </label>
+                <label class="radio-card radio-card-sm">
+                  <input type="radio" name="delai" value="flexible" />
+                  <div class="radio-inner">
+                    <p class="radio-title">Flexible</p>
+                    <p class="radio-sub">Pas de contrainte</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Références -->
+            <div class="form-group">
+              <label class="form-label" for="references">
+                Inspirations ou références visuelles <span class="optional">(optionnel)</span>
+              </label>
+              <input
+                type="text"
+                id="references"
+                name="references"
+                class="form-input"
+                placeholder="Noms de marques, liens Pinterest, Instagram, Behance…"
+              />
+            </div>
+
+            <!-- Couleurs -->
+            <div class="form-group">
+              <label class="form-label" for="couleurs">
+                Couleurs souhaitées <span class="optional">(optionnel)</span>
+              </label>
+              <input
+                type="text"
+                id="couleurs"
+                name="couleurs"
+                class="form-input"
+                placeholder="Ex : Rouge et noir, tons naturels, bleu et or…"
+              />
+            </div>
+
+            <div class="form-nav">
+              <button type="button" class="btn btn-outline-step" id="prev2">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Retour
+              </button>
+              <button type="button" class="btn btn-primary" id="next2">
+                Continuer
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ============================
+               ÉTAPE 3 — Coordonnées
+               ============================ -->
+          <div class="form-step" id="step3">
+
+            <div class="step-header">
+              <h2>Vos coordonnées</h2>
+              <p>Comment vous recontacter pour discuter de votre projet créatif ?</p>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label required" for="firstName">
+                  Prénom <span class="error-msg" id="err-firstname"></span>
+                </label>
+                <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Jean-Paul" />
+              </div>
+              <div class="form-group">
+                <label class="form-label required" for="lastName">
+                  Nom <span class="error-msg" id="err-lastname"></span>
+                </label>
+                <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Nkeng" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label required" for="email">
+                Email <span class="error-msg" id="err-email"></span>
+              </label>
+              <div class="input-icon-wrap">
+                <svg class="input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <input type="email" id="email" name="email" class="form-input input-with-icon" placeholder="vous@exemple.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label required" for="phone">
+                Téléphone / WhatsApp <span class="error-msg" id="err-phone"></span>
+              </label>
+              <div class="input-icon-wrap">
+                <svg class="input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <input type="tel" id="phone" name="phone" class="form-input input-with-icon" placeholder="+237 6XX XXX XXX" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="company">
+                Entreprise / Marque <span class="optional">(optionnel)</span>
+              </label>
+              <input type="text" id="company" name="company" class="form-input" placeholder="Nom de votre société ou marque" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="source">Comment avez-vous connu RHIZART ?</label>
+              <div class="select-wrap">
+                <select id="source" name="source" class="form-input form-select">
+                  <option value="" disabled selected>Choisissez…</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="google">Recherche Google</option>
+                  <option value="bouche">Bouche à oreille</option>
+                  <option value="client">Recommandation d'un client</option>
+                  <option value="autre">Autre</option>
+                </select>
+                <svg class="select-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="check-consent">
+                <input type="checkbox" id="consent" name="consent" />
+                <span>J'accepte que RHIZART traite mes données pour me recontacter. Aucun spam. <a href="#">Confidentialité</a></span>
+              </label>
+              <span class="error-msg" id="err-consent"></span>
+            </div>
+
+            <div class="form-nav">
+              <button type="button" class="btn btn-outline-step" id="prev3">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Retour
+              </button>
+              <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                <span class="btn-text">Envoyer ma demande</span>
+                <span class="btn-loader" style="display:none">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                </span>
+                <svg class="btn-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ============================
+               ÉTAPE 4 — Confirmation
+               ============================ -->
+          <div class="form-step" id="step4">
+            <div class="success-screen">
+              <div class="success-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h2>Demande reçue !</h2>
+              <p>Merci <strong id="confirmName"></strong>, notre équipe créative a bien reçu votre demande. Nous vous contacterons sous <strong>24 heures</strong> avec une proposition adaptée.</p>
+
+              <div class="success-details" id="successDetails"></div>
+
+              <div class="success-actions">
+                <a href="index.html" class="btn btn-outline-step">Retour à l'accueil</a>
+                <a href="https://wa.me/237600000000" class="btn btn-primary">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  Discuter sur WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+  <script src="devis.js"></script>
+</body>
+</html>

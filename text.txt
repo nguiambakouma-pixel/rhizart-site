@@ -1,0 +1,5 @@
+TEMPLATE ID: template_kj9tune
+PUBLIC KEY: D_abvtZDE2vjfqQ9m
+SERVICE ID: service_etw5yss
+
+ntn_514829972098zmDXkZ5E3b2Q7gCaeSbK2fIDgv6ghk07iDS

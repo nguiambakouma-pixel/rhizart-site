@@ -1,0 +1,302 @@
+# ============================================
+# RHIZART — Netlify CMS Config
+# ============================================
+
+backend:
+  name: git-gateway
+  branch: main   # branche GitHub principale
+
+# Dossier où les images uploadées seront stockées
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Langue de l'interface admin
+locale: fr
+
+# ============================================
+# COLLECTIONS
+# ============================================
+collections:
+
+  # ------------------------------------------
+  # 1. PROJETS PORTFOLIO
+  # ------------------------------------------
+  - name: "projets"
+    label: "Projets Portfolio"
+    label_singular: "Projet"
+    folder: "_projets"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: titre
+    summary: "{{titre}} — {{categorie}}"
+    fields:
+
+      - label: "Titre du projet"
+        name: "titre"
+        widget: "string"
+        hint: "Ex : Identité visuelle Boutique Élégance"
+
+      - label: "Catégorie"
+        name: "categorie"
+        widget: "select"
+        options:
+          - { label: "Branding / Identité visuelle", value: "branding" }
+          - { label: "Print & supports", value: "print" }
+          - { label: "Motion design & Vidéo", value: "motion" }
+          - { label: "Illustration digitale", value: "illustration" }
+          - { label: "Réseaux sociaux", value: "social" }
+          - { label: "Packaging", value: "packaging" }
+
+      - label: "Description courte"
+        name: "description"
+        widget: "text"
+        hint: "1-2 phrases affichées sur la carte portfolio"
+
+      - label: "Image principale"
+        name: "image"
+        widget: "image"
+        hint: "Image principale du projet (recommandé : 800x600px)"
+
+      - label: "Images galerie"
+        name: "galerie"
+        widget: "list"
+        required: false
+        label_singular: "Image"
+        field:
+          label: "Image"
+          name: "image"
+          widget: "image"
+        hint: "Images supplémentaires pour la page détail"
+
+      - label: "Client"
+        name: "client"
+        widget: "string"
+        required: false
+        hint: "Nom du client (ou 'Confidentiel')"
+
+      - label: "Année"
+        name: "annee"
+        widget: "number"
+        default: 2025
+        value_type: "int"
+
+      - label: "Durée"
+        name: "duree"
+        widget: "string"
+        required: false
+        hint: "Ex : 3 semaines, 1 mois"
+
+      - label: "Technologies / Outils"
+        name: "outils"
+        widget: "list"
+        required: false
+        label_singular: "Outil"
+        field:
+          label: "Outil"
+          name: "outil"
+          widget: "string"
+        hint: "Ex : Illustrator, After Effects, Procreate"
+
+      - label: "Résultat clé"
+        name: "resultat"
+        widget: "string"
+        required: false
+        hint: "Ex : +40% de notoriété, 10 000 vues en 48h"
+
+      - label: "Lien du projet (si en ligne)"
+        name: "lien"
+        widget: "string"
+        required: false
+        hint: "URL vers le projet final (optionnel)"
+
+      - label: "Description complète (page détail)"
+        name: "contenu"
+        widget: "markdown"
+        required: false
+        hint: "Texte long pour la page détail du projet"
+
+      - label: "Témoignage client"
+        name: "temoignage"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Citation", name: "texte", widget: "text" }
+          - { label: "Nom du client", name: "nom", widget: "string" }
+          - { label: "Rôle / Entreprise", name: "role", widget: "string" }
+
+      - label: "Publié"
+        name: "publie"
+        widget: "boolean"
+        default: true
+        hint: "Décocher pour masquer ce projet du site"
+
+  # ------------------------------------------
+  # 2. MEMBRES DE L'ÉQUIPE
+  # ------------------------------------------
+  - name: "equipe"
+    label: "Équipe"
+    label_singular: "Membre"
+    folder: "_equipe"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: nom
+    fields:
+
+      - label: "Nom complet"
+        name: "nom"
+        widget: "string"
+
+      - label: "Rôle / Poste"
+        name: "role"
+        widget: "string"
+        hint: "Ex : Directeur créatif & Branding"
+
+      - label: "Photo"
+        name: "photo"
+        widget: "image"
+        hint: "Photo portrait (recommandé : 400x500px)"
+
+      - label: "Biographie"
+        name: "bio"
+        widget: "text"
+        hint: "2-3 phrases de présentation"
+
+      - label: "Compétences"
+        name: "competences"
+        widget: "list"
+        label_singular: "Compétence"
+        field:
+          label: "Compétence"
+          name: "comp"
+          widget: "string"
+
+      - label: "Est fondateur ?"
+        name: "fondateur"
+        widget: "boolean"
+        default: false
+
+      - label: "LinkedIn"
+        name: "linkedin"
+        widget: "string"
+        required: false
+
+      - label: "Instagram"
+        name: "instagram"
+        widget: "string"
+        required: false
+
+      - label: "Behance"
+        name: "behance"
+        widget: "string"
+        required: false
+
+      - label: "Ordre d'affichage"
+        name: "ordre"
+        widget: "number"
+        default: 1
+        hint: "1 = affiché en premier"
+
+  # ------------------------------------------
+  # 3. TÉMOIGNAGES
+  # ------------------------------------------
+  - name: "temoignages"
+    label: "Témoignages"
+    label_singular: "Témoignage"
+    folder: "_temoignages"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: nom
+    fields:
+
+      - label: "Nom du client"
+        name: "nom"
+        widget: "string"
+
+      - label: "Rôle / Entreprise"
+        name: "role"
+        widget: "string"
+
+      - label: "Citation"
+        name: "citation"
+        widget: "text"
+
+      - label: "Note (sur 5)"
+        name: "note"
+        widget: "number"
+        default: 5
+        min: 1
+        max: 5
+
+      - label: "Mis en avant ?"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "Afficher en position centrale (carte noire)"
+
+      - label: "Publié"
+        name: "publie"
+        widget: "boolean"
+        default: true
+
+  # ------------------------------------------
+  # 4. PARAMÈTRES GÉNÉRAUX DU SITE
+  # ------------------------------------------
+  - name: "parametres"
+    label: "Paramètres du site"
+    files:
+
+      - label: "Informations générales"
+        name: "general"
+        file: "_data/general.yml"
+        fields:
+
+          - label: "Nom du studio"
+            name: "nom_studio"
+            widget: "string"
+            default: "RHIZART Studio"
+
+          - label: "Slogan"
+            name: "slogan"
+            widget: "string"
+            default: "L'image qui parle avant les mots"
+
+          - label: "Email de contact"
+            name: "email"
+            widget: "string"
+            default: "contact@rhizart.cm"
+
+          - label: "Numéro WhatsApp"
+            name: "whatsapp"
+            widget: "string"
+            hint: "Format international : 237600000000"
+            default: "237600000000"
+
+          - label: "Adresse"
+            name: "adresse"
+            widget: "string"
+            default: "Carrefour Kingué, Kribi, Cameroun"
+
+          - label: "Horaires"
+            name: "horaires"
+            widget: "string"
+            default: "Lundi – Samedi · 8h à 18h"
+
+          - label: "Facebook"
+            name: "facebook"
+            widget: "string"
+            required: false
+
+          - label: "Instagram"
+            name: "instagram"
+            widget: "string"
+            required: false
+
+          - label: "TikTok"
+            name: "tiktok"
+            widget: "string"
+            required: false
+
+          - label: "Behance"
+            name: "behance"
+            widget: "string"
+            required: false
