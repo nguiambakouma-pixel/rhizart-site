@@ -152,7 +152,7 @@ button { cursor: pointer; font-family: var(--font-body); }
 /* Logo */
 .logo {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0;
   font-family: var(--font-cond);
   font-size: 1.6rem;
@@ -163,6 +163,17 @@ button { cursor: pointer; font-family: var(--font-body); }
 .logo-rh  { color: #fff; }
 .logo-iz  { color: var(--red); }
 .logo-art { color: rgba(255,255,255,0.5); }
+
+.logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-logo .logo-img {
+  height: 36px;
+}
 
 /* Nav links */
 .nav-links {

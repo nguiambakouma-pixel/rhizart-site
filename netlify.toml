@@ -1,40 +1,21 @@
 # ============================================
 # RHIZART — netlify.toml
-# Configuration déploiement Netlify
 # ============================================
 
 [build]
-  publish = "."        # dossier racine du site
-  command = ""         # pas de build (site statique pur HTML/CSS/JS)
+  publish = "."
+  command = ""
 
-# Redirections
-[[redirects]]
-  from = "/admin"
-  to   = "/admin/index.html"
-  status = 200
-
-# Headers de sécurité
+# Headers sécurité
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
+    X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
 
 # Cache images
 [[headers]]
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-
-# Cache CSS/JS
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"

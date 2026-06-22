@@ -4,7 +4,7 @@
 
 backend:
   name: git-gateway
-  branch: main   # branche GitHub principale
+  branch: main # branche GitHub principale
 
 # Dossier où les images uploadées seront stockées
 media_folder: "images/uploads"
@@ -17,7 +17,6 @@ locale: fr
 # COLLECTIONS
 # ============================================
 collections:
-
   # ------------------------------------------
   # 1. PROJETS PORTFOLIO
   # ------------------------------------------
@@ -30,7 +29,6 @@ collections:
     identifier_field: titre
     summary: "{{titre}} — {{categorie}}"
     fields:
-
       - label: "Titre du projet"
         name: "titre"
         widget: "string"
@@ -141,7 +139,6 @@ collections:
     slug: "{{slug}}"
     identifier_field: nom
     fields:
-
       - label: "Nom complet"
         name: "nom"
         widget: "string"
@@ -207,7 +204,6 @@ collections:
     slug: "{{slug}}"
     identifier_field: nom
     fields:
-
       - label: "Nom du client"
         name: "nom"
         widget: "string"
@@ -244,12 +240,10 @@ collections:
   - name: "parametres"
     label: "Paramètres du site"
     files:
-
       - label: "Informations générales"
         name: "general"
         file: "_data/general.yml"
         fields:
-
           - label: "Nom du studio"
             name: "nom_studio"
             widget: "string"
