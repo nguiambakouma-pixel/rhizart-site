@@ -166,13 +166,16 @@ button { cursor: pointer; font-family: var(--font-body); }
 
 .logo-img {
   display: block;
-  height: 40px;
-  width: auto;
+  height: 40px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: 40px !important;
   object-fit: contain;
 }
 
 .footer-logo .logo-img {
-  height: 36px;
+  height: 36px !important;
+  max-height: 36px !important;
 }
 
 /* Nav links */
