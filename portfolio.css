@@ -566,18 +566,18 @@
    CORRECTIFS LISIBILITÉ TEXTE SUR IMAGE
    ============================================ */
 
-/* Overlay toujours visible (pas seulement au hover) */
+/* Overlay toujours visible avec un fond plus opaque */
 .pf-overlay {
   background: linear-gradient(
     to top,
-    rgba(5,5,5,0.97) 0%,
-    rgba(5,5,5,0.75) 40%,
-    rgba(5,5,5,0.2)  70%,
-    transparent      100%
+    rgba(0,0,0,0.95) 0%,
+    rgba(0,0,0,0.85) 30%,
+    rgba(0,0,0,0.6)  60%,
+    rgba(0,0,0,0.3)  100%
   ) !important;
 }
 
-/* Toujours afficher le bas de l'overlay (tag + titre) */
+/* Toujours afficher l'overlay */
 .pf-item .pf-overlay {
   opacity: 1 !important;
 }
@@ -601,10 +601,16 @@
   opacity: 1 !important;
 }
 
-/* Ombre portée sur le texte pour lisibilité maximale */
+/* Ombre portée renforcée sur TOUS les textes de l'overlay */
 .pf-overlay-content h3 {
-  text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,1) !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.95), 0 1px 4px rgba(0,0,0,1) !important;
   font-size: 0.95rem !important;
+  color: #ffffff !important;
+}
+
+.pf-overlay-content > p {
+  text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important;
+  color: rgba(255,255,255,0.8) !important;
 }
 
 /* Fond rouge derrière le tag pour toujours le voir */
@@ -613,4 +619,5 @@
   padding: 3px 10px !important;
   border-radius: 4px !important;
   text-shadow: none !important;
+  color: #ffffff !important;
 }

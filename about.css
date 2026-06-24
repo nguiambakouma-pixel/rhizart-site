@@ -56,13 +56,15 @@
   letter-spacing: -0.03em;
   line-height: 1.1;
   margin-bottom: 1.25rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
 }
 .about-hero-content h1 em { font-style: italic; color: var(--red); }
 .about-hero-sub {
   font-size: 1.05rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.7);
   line-height: 1.78;
   max-width: 560px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.7);
 }
 
 /* ============================================
