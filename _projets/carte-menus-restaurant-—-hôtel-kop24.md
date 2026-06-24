@@ -1,7 +1,7 @@
 ---
 titre: Carte menus restaurant — Hôtel KOP24
 categorie: print
-description: Conception et impression des cartes menus pour l'Hôtel KOP24 de Kribi.
+description: Conception et Impression des cartes menus pour l'Hôtel KOP24 de Kribi.
 image: /images/uploads/img_20240215_081039_026.jpg
 client: "Hôtel KOP24 "
 annee: 2024
