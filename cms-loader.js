@@ -26,7 +26,10 @@ function fetchFile(path) {
       return res.json();
     })
     .then(function (data) {
-      return atob(data.content.replace(/\n/g, ''));
+      var binary = atob(data.content.replace(/\n/g, ''));
+      var bytes = new Uint8Array(binary.length);
+      for (var i = 0; i < binary.length; i++) { bytes[i] = binary.charCodeAt(i); }
+      return new TextDecoder('utf-8').decode(bytes);
     });
 }
 
