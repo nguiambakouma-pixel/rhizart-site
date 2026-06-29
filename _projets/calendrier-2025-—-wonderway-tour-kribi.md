@@ -1,11 +1,11 @@
 ---
-titre: Calendrier 2025 — WonderWay Tour Kribi
+titre: Calendrier publicitaire — Wafacash 2025
 categorie: print
-description: |-
-  Calendrier publicitaire annuel pour agence de tourisme
-                 à Kribi. Mise en page photos de destinations et contacts.
-image: /images/uploads/img_20241223_151649_689.jpg
-client: WonderWay Tour Kribi
+description: |-2
+   Calendrier de table format A4 pour Wafacash.
+                 Photo portrait, slogan et grille calendaire annuelle.
+image: /images/uploads/img_20250411_111855_827.jpg
+client: Wafacash
 annee: 2025
 duree: 2 jours
 outils:
