@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -81,27 +81,31 @@
         <div class="portfolio-filters" id="portfolioFilters">
           <button class="pf-btn active" data-filter="all">
             Tout
-            <span class="pf-count" id="cnt-all">12</span>
+            <span class="pf-count" id="cnt-all">0</span>
           </button>
           <button class="pf-btn" data-filter="branding">
             Branding
-            <span class="pf-count" id="cnt-branding">4</span>
+            <span class="pf-count" id="cnt-branding">0</span>
           </button>
           <button class="pf-btn" data-filter="print">
             Print
-            <span class="pf-count" id="cnt-print">3</span>
+            <span class="pf-count" id="cnt-print">0</span>
           </button>
           <button class="pf-btn" data-filter="motion">
             Motion
-            <span class="pf-count" id="cnt-motion">2</span>
+            <span class="pf-count" id="cnt-motion">0</span>
           </button>
           <button class="pf-btn" data-filter="illustration">
             Illustration
-            <span class="pf-count" id="cnt-illustration">2</span>
+            <span class="pf-count" id="cnt-illustration">0</span>
           </button>
           <button class="pf-btn" data-filter="social">
             Social Media
-            <span class="pf-count" id="cnt-social">1</span>
+            <span class="pf-count" id="cnt-social">0</span>
+          </button>
+          <button class="pf-btn" data-filter="packaging">
+            Packaging
+            <span class="pf-count" id="cnt-packaging">0</span>
           </button>
         </div>
 
@@ -130,357 +134,9 @@
         </div>
       </div>
 
-      <!-- Grille portfolio -->
+      <!-- Grille portfolio — remplie dynamiquement par cms-loader.js (projects.json via jsdelivr) -->
       <div class="portfolio-grid" id="portfolioGrid">
-
-        <!-- ITEM 1 — Branding -->
-        <div class="pf-item" data-cat="branding" data-title="Identité visuelle marque locale"
-          data-img="images/portfolio1.jpg">
-          <div class="pf-img-wrap">
-            <img src="images/portfolio1.jpg" alt="Identité visuelle — Marque locale" loading="lazy" />
-            <span class="pf-img-badge">Branding</span>
-            <button class="pf-zoom-btn" data-index="0" aria-label="Agrandir">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </button>
-          </div>
-          <div class="pf-card-body">
-            <h3>Identité visuelle — Marque locale</h3>
-            <p class="pf-card-desc">Logo, charte graphique et brand book complet pour une marque de mode camerounaise.</p>
-            <div class="pf-card-footer">
-              <span class="pf-tag">Branding</span>
-              <a href="projet1.html" class="pf-detail-btn">Voir le projet
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 2 — Print -->
-        <div class="pf-item" data-cat="print" data-title="Affiche événementielle concert"
-          data-img="images/portfolio2.jpg">
-          <div class="pf-img-wrap">
-            <img src="images/portfolio2.jpg" alt="Affiche événementielle" loading="lazy" />
-            <span class="pf-img-badge">Print</span>
-            <button class="pf-zoom-btn" data-index="1" aria-label="Agrandir">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </button>
-          </div>
-          <div class="pf-card-body">
-            <h3>Affiche événementielle</h3>
-            <p class="pf-card-desc">Affiche concert avec direction artistique afro-futuriste.</p>
-            <div class="pf-card-footer">
-              <span class="pf-tag">Print</span>
-              <a href="projet2.html" class="pf-detail-btn">Voir le projet
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 3 — Illustration -->
-        <div class="pf-item" data-cat="illustration" data-title="Illustration cover magazine"
-          data-img="images/portfolio3.jpg">
-          <div class="pf-img-wrap">
-            <img src="images/portfolio3.jpg" alt="Illustration cover magazine" loading="lazy" />
-            <span class="pf-img-badge">Illustration</span>
-            <button class="pf-zoom-btn" data-index="2" aria-label="Agrandir">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </button>
-          </div>
-          <div class="pf-card-body">
-            <h3>Cover magazine</h3>
-            <p class="pf-card-desc">Illustration digitale pour couverture d'un magazine culturel.</p>
-            <div class="pf-card-footer">
-              <span class="pf-tag">Illustration</span>
-              <a href="projet3.html" class="pf-detail-btn">Voir le projet
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 4 — Motion -->
-        <div class="pf-item" data-cat="motion" data-title="Spot publicitaire animé restaurant"
-          data-img="images/portfolio4.jpg">
-          <div class="pf-img-wrap">
-            <img src="images/portfolio4.jpg" alt="Motion design pub restaurant" loading="lazy" />
-            <span class="pf-img-badge">Motion</span>
-            <button class="pf-zoom-btn" data-index="3" aria-label="Agrandir">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </button>
-          </div>
-          <div class="pf-card-body">
-            <h3>Spot publicitaire — Restaurant</h3>
-            <p class="pf-card-desc">Animation 30s pour campagne réseaux sociaux.</p>
-            <div class="pf-card-footer">
-              <span class="pf-tag">Motion</span>
-              <a href="projet4.html" class="pf-detail-btn">Voir le projet
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 5 — Branding -->
-        <div class="pf-item" data-cat="branding" data-title="Packaging produit local agroalimentaire"
-          data-img="images/portfolio5.jpg">
-          <div class="pf-img-wrap">
-            <img src="images/portfolio5.jpg" alt="Packaging produit local" loading="lazy" />
-            <span class="pf-img-badge">Branding</span>
-            <button class="pf-zoom-btn" data-index="4" aria-label="Agrandir">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </button>
-          </div>
-          <div class="pf-card-body">
-            <h3>Packaging — Produit agroalimentaire</h3>
-            <p class="pf-card-desc">Conception d'emballage pour gamme de produits locaux.</p>
-            <div class="pf-card-footer">
-              <span class="pf-tag">Branding</span>
-              <a href="projet5.html" class="pf-detail-btn">Voir le projet
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 6 — Branding -->
-        <div class="pf-item" data-cat="branding" data-title="Identité visuelle restaurant gastronomique"
-          data-img="images/portfolio6.jpg">
-          <div class="pf-img-wrap">
-            <img src="images/portfolio6.jpg" alt="Branding restaurant gastronomique" loading="lazy" />
-            <span class="pf-img-badge">Branding</span>
-            <button class="pf-zoom-btn" data-index="5" aria-label="Agrandir">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </button>
-          </div>
-          <div class="pf-card-body">
-            <h3>Identité — Restaurant gastronomique</h3>
-            <p class="pf-card-desc">Branding complet : logo, menu, signalétique, supports print.</p>
-            <div class="pf-card-footer">
-              <span class="pf-tag">Branding</span>
-              <a href="projet6.html" class="pf-detail-btn">Voir le projet
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 7 — Print -->
-        <div class="pf-item" data-cat="print" data-title="Brochure corporate entreprise"
-          data-img="images/portfolio7.jpg">
-          <div class="pf-img-wrap">
-            <img src="images/portfolio7.jpg" alt="Brochure corporate" loading="lazy" />
-            <span class="pf-img-badge">Print</span>
-            <button class="pf-zoom-btn" data-index="6" aria-label="Agrandir">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </button>
-          </div>
-          <div class="pf-card-body">
-            <h3>Brochure corporate</h3>
-            <p class="pf-card-desc">Brochure 16 pages pour PME du secteur BTP.</p>
-            <div class="pf-card-footer">
-              <span class="pf-tag">Print</span>
-              <a href="projet7.html" class="pf-detail-btn">Voir le projet
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 8 — Social Media -->
-        <div class="pf-item" data-cat="social" data-title="Templates réseaux sociaux feed instagram"
-          data-img="images/portfolio8.jpg">
-          <div class="pf-img-wrap">
-            <img src="images/portfolio8.jpg" alt="Templates Instagram" loading="lazy" />
-            <span class="pf-img-badge">Social Media</span>
-            <button class="pf-zoom-btn" data-index="7" aria-label="Agrandir">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </button>
-          </div>
-          <div class="pf-card-body">
-            <h3>Pack templates Instagram</h3>
-            <p class="pf-card-desc">30 templates cohérents pour feed et stories d'une boutique mode.</p>
-            <div class="pf-card-footer">
-              <span class="pf-tag">Social Media</span>
-              <a href="projet8.html" class="pf-detail-btn">Voir le projet
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 9 — Motion -->
-        <div class="pf-item" data-cat="motion" data-title="Intro animée logo motion design"
-          data-img="images/portfolio9.jpg">
-          <div class="pf-img-wrap">
-            <img src="images/portfolio9.jpg" alt="Intro animée logo" loading="lazy" />
-            <span class="pf-img-badge">Motion</span>
-            <button class="pf-zoom-btn" data-index="8" aria-label="Agrandir">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </button>
-          </div>
-          <div class="pf-card-body">
-            <h3>Intro animée — Logo reveal</h3>
-            <p class="pf-card-desc">Animation logo 5s pour intro YouTube et vidéos professionnelles.</p>
-            <div class="pf-card-footer">
-              <span class="pf-tag">Motion</span>
-              <a href="projet9.html" class="pf-detail-btn">Voir le projet
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 10 — Print -->
-        <div class="pf-item" data-cat="print" data-title="Flyers promotionnels campagne marketing"
-          data-img="images/portfolio10.jpg">
-          <div class="pf-img-wrap">
-            <img src="images/portfolio10.jpg" alt="Flyers promotionnels" loading="lazy" />
-            <span class="pf-img-badge">Print</span>
-            <button class="pf-zoom-btn" data-index="9" aria-label="Agrandir">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </button>
-          </div>
-          <div class="pf-card-body">
-            <h3>Flyers promotionnels</h3>
-            <p class="pf-card-desc">Série de 5 flyers pour campagne de lancement produit.</p>
-            <div class="pf-card-footer">
-              <span class="pf-tag">Print</span>
-              <a href="projet10.html" class="pf-detail-btn">Voir le projet
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 11 — Illustration -->
-        <div class="pf-item" data-cat="illustration" data-title="Illustration personnage mascotte marque"
-          data-img="images/portfolio11.jpg">
-          <div class="pf-img-wrap">
-            <img src="images/portfolio11.jpg" alt="Mascotte marque" loading="lazy" />
-            <span class="pf-img-badge">Illustration</span>
-            <button class="pf-zoom-btn" data-index="10" aria-label="Agrandir">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </button>
-          </div>
-          <div class="pf-card-body">
-            <h3>Mascotte — Marque jeunesse</h3>
-            <p class="pf-card-desc">Création d'un personnage mascotte pour marque d'éducation.</p>
-            <div class="pf-card-footer">
-              <span class="pf-tag">Illustration</span>
-              <a href="projet11.html" class="pf-detail-btn">Voir le projet
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ITEM 12 — Branding -->
-        <div class="pf-item" data-cat="branding" data-title="Identité visuelle cabinet médical clinique"
-          data-img="images/portfolio12.jpg">
-          <div class="pf-img-wrap">
-            <img src="images/portfolio12.jpg" alt="Branding cabinet médical" loading="lazy" />
-            <span class="pf-img-badge">Branding</span>
-            <button class="pf-zoom-btn" data-index="11" aria-label="Agrandir">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </button>
-          </div>
-          <div class="pf-card-body">
-            <h3>Identité — Cabinet médical</h3>
-            <p class="pf-card-desc">Branding rassurant et professionnel pour clinique privée.</p>
-            <div class="pf-card-footer">
-              <span class="pf-tag">Branding</span>
-              <a href="projet12.html" class="pf-detail-btn">Voir le projet
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
+        <!-- Les projets sont chargés dynamiquement depuis projects.json -->
       </div><!-- /portfolio-grid -->
 
       <!-- Aucun résultat -->
@@ -651,7 +307,7 @@
 
   <script src="translations.js"></script>
   <script src="script.js"></script>
-  <script src="portfolio.js"></script>
+  <script src="cms-loader.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 # ============================================
-# RHIZART — Decap CMS Config
+# RHIZART — Decap CMS Config v2
+# Architecture JSON : édite projects.json directement
 # Authentification via GitHub OAuth
 # ============================================
 
@@ -11,47 +12,58 @@ backend:
   auth_endpoint: auth
 
 media_folder: "images/uploads"
-public_folder: "/images/uploads"
+public_folder: "images/uploads"
 
 locale: fr
 
 collections:
 
+  # ============================================
+  # PROJETS — édite projects.json directement
+  # ============================================
   - name: "projets"
     label: "Projets Portfolio"
     label_singular: "Projet"
-    folder: "_projets"
-    create: true
-    slug: "{{slug}}"
-    identifier_field: titre
-    summary: "{{titre}} — {{categorie}}"
-    fields:
-      - { label: "Titre", name: "titre", widget: "string" }
-      - label: "Catégorie"
-        name: "categorie"
-        widget: "select"
-        options:
-          - { label: "Branding", value: "branding" }
-          - { label: "Print", value: "print" }
-          - { label: "Motion", value: "motion" }
-          - { label: "Illustration", value: "illustration" }
-          - { label: "Réseaux sociaux", value: "social" }
-          - { label: "Packaging", value: "packaging" }
-      - { label: "Description courte", name: "description", widget: "text" }
-      - { label: "Image principale", name: "image", widget: "image" }
-      - { label: "Client", name: "client", widget: "string", required: false }
-      - { label: "Année", name: "annee", widget: "number", default: 2025 }
-      - { label: "Durée", name: "duree", widget: "string", required: false }
-      - label: "Outils / Technologies"
-        name: "outils"
-        widget: "list"
-        required: false
-        field: { label: "Outil", name: "outil", widget: "string" }
-      - { label: "Résultat clé", name: "resultat", widget: "string", required: false }
-      - { label: "Lien (si en ligne)", name: "lien", widget: "string", required: false }
-      - { label: "Description complète", name: "contenu", widget: "markdown", required: false }
-      - { label: "Publié", name: "publie", widget: "boolean", default: true }
+    files:
+      - label: "Tous les projets"
+        name: "all_projets"
+        file: "projects.json"
+        fields:
+          - label: "Projets"
+            name: "projets"
+            widget: "list"
+            label_singular: "Projet"
+            summary: "{{fields.titre}} — {{fields.categorie}} ({{fields.annee}})"
+            fields:
+              - { label: "Slug (identifiant unique, pas d'espaces)", name: "slug", widget: "string" }
+              - { label: "Titre", name: "titre", widget: "string" }
+              - label: "Catégorie"
+                name: "categorie"
+                widget: "select"
+                options:
+                  - { label: "Branding", value: "branding" }
+                  - { label: "Print", value: "print" }
+                  - { label: "Motion Design", value: "motion" }
+                  - { label: "Illustration", value: "illustration" }
+                  - { label: "Réseaux sociaux", value: "social" }
+                  - { label: "Packaging", value: "packaging" }
+              - { label: "Description courte", name: "description", widget: "text" }
+              - { label: "Image principale", name: "image", widget: "image" }
+              - { label: "Client", name: "client", widget: "string", required: false }
+              - { label: "Année", name: "annee", widget: "number", default: 2025 }
+              - { label: "Durée", name: "duree", widget: "string", required: false }
+              - label: "Outils / Technologies"
+                name: "outils"
+                widget: "list"
+                required: false
+                field: { label: "Outil", name: "outil", widget: "string" }
+              - { label: "Résultat clé", name: "resultat", widget: "string", required: false }
+              - { label: "Lien (si en ligne)", name: "lien", widget: "string", required: false, default: "" }
+              - { label: "Publié", name: "publie", widget: "boolean", default: true }
 
+  # ============================================
+  # ÉQUIPE — reste en fichiers Markdown séparés
+  # ============================================
   - name: "equipe"
     label: "Équipe"
     label_singular: "Membre"
@@ -73,6 +85,9 @@ collections:
       - { label: "Instagram", name: "instagram", widget: "string", required: false }
       - { label: "Ordre", name: "ordre", widget: "number", default: 1 }
 
+  # ============================================
+  # TÉMOIGNAGES — reste en fichiers Markdown séparés
+  # ============================================
   - name: "temoignages"
     label: "Témoignages"
     label_singular: "Témoignage"
@@ -88,6 +103,9 @@ collections:
       - { label: "Mis en avant ?", name: "featured", widget: "boolean", default: false }
       - { label: "Publié", name: "publie", widget: "boolean", default: true }
 
+  # ============================================
+  # PARAMÈTRES GÉNÉRAUX
+  # ============================================
   - name: "parametres"
     label: "Paramètres"
     files:
