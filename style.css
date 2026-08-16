@@ -562,6 +562,7 @@ button { cursor: pointer; font-family: var(--font-body); }
   gap: 1.5rem;
 }
 
+/* Base card — blanc + bordure legère */
 .svc-card {
   background: var(--white);
   border: 1.5px solid var(--border);
@@ -588,54 +589,84 @@ button { cursor: pointer; font-family: var(--font-body); }
 }
 .svc-card:hover::after { transform: scaleX(1); }
 
-.svc-featured {
-  grid-column: span 1;
-  background: var(--black);
+/* Card 01 — Noir avec dégradé RHIZART (carte featured) */
+.svc-color-1 {
+  background: linear-gradient(145deg, var(--black) 0%, #1a0608 100%);
   border-color: transparent;
 }
-.svc-featured::after { background: var(--red); }
-.svc-featured .svc-num { color: rgba(255,255,255,0.15); }
-.svc-featured .svc-icon-box { background: rgba(227,30,36,0.15); color: var(--red); }
-.svc-featured h3 { color: #fff; }
-.svc-featured p  { color: rgba(255,255,255,0.5); }
-.svc-featured .svc-link { color: var(--red); }
+.svc-color-1 .svc-num        { color: rgba(255,255,255,0.15); }
+.svc-color-1 .svc-icon-box   { background: rgba(227,30,36,0.18); color: var(--red); }
+.svc-color-1 h3              { color: #fff; }
+.svc-color-1 p               { color: rgba(255,255,255,0.55); }
+.svc-color-1 .svc-link       { color: var(--red); }
+.svc-color-1:hover .svc-icon-box { background: var(--red); color: #fff; }
 
+/* Cards 02–06 — Blanc pur + accents rouges */
+.svc-color-2 .svc-num,
+.svc-color-3 .svc-num,
+.svc-color-4 .svc-num,
+.svc-color-5 .svc-num,
+.svc-color-6 .svc-num        { color: var(--border); }
+
+.svc-color-2 .svc-icon-box,
+.svc-color-3 .svc-icon-box,
+.svc-color-4 .svc-icon-box,
+.svc-color-5 .svc-icon-box,
+.svc-color-6 .svc-icon-box   { background: var(--red-light); color: var(--red); }
+
+.svc-color-2 h3,
+.svc-color-3 h3,
+.svc-color-4 h3,
+.svc-color-5 h3,
+.svc-color-6 h3              { color: var(--text); }
+
+.svc-color-2 p,
+.svc-color-3 p,
+.svc-color-4 p,
+.svc-color-5 p,
+.svc-color-6 p               { color: var(--text-muted); }
+
+.svc-color-2 .svc-link,
+.svc-color-3 .svc-link,
+.svc-color-4 .svc-link,
+.svc-color-5 .svc-link,
+.svc-color-6 .svc-link       { color: var(--red); }
+
+.svc-color-2:hover .svc-icon-box,
+.svc-color-3:hover .svc-icon-box,
+.svc-color-4:hover .svc-icon-box,
+.svc-color-5:hover .svc-icon-box,
+.svc-color-6:hover .svc-icon-box { background: var(--red); color: #fff; }
+
+
+/* --- Shared inner elements --- */
 .svc-num {
   font-family: var(--font-cond);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--border);
   margin-bottom: 1.25rem;
 }
 
 .svc-icon-box {
   width: 52px; height: 52px;
   border-radius: var(--r-sm);
-  background: var(--red-light);
-  color: var(--red);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.25rem;
   transition: all var(--t);
 }
-.svc-card:hover .svc-icon-box {
-  background: var(--red);
-  color: #fff;
-}
 
 .svc-card h3 {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--text);
   margin-bottom: 0.65rem;
   letter-spacing: -0.01em;
 }
 .svc-card p {
   font-size: 0.875rem;
-  color: var(--text-muted);
   line-height: 1.72;
   margin-bottom: 1.5rem;
 }
@@ -646,39 +677,11 @@ button { cursor: pointer; font-family: var(--font-body); }
   gap: 6px;
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--red);
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: gap var(--t);
 }
 .svc-link:hover { gap: 10px; }
-
-/* Card CTA */
-.svc-cta-card {
-  background: var(--red);
-  border-color: transparent;
-}
-.svc-cta-card::after { display: none; }
-.svc-cta-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-red); }
-.svc-cta-tag {
-  font-family: var(--font-cond);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 0.5rem;
-}
-.svc-cta-card h3 { color: #fff; font-size: 1.3rem; }
-.svc-cta-card p  { color: rgba(255,255,255,0.7); }
-.svc-cta-card .btn-primary {
-  background: #fff;
-  color: var(--red);
-}
-.svc-cta-card .btn-primary:hover {
-  background: var(--off-white);
-  box-shadow: none;
-}
 
 /* ============================================
    PORTFOLIO
@@ -1179,4 +1182,14 @@ button { cursor: pointer; font-family: var(--font-body); }
 @media (max-width: 480px) {
   .stats-inner        { grid-template-columns: 1fr 1fr; }
   .stat-block::after  { display: none; }
+}
+
+/* ---- FOOTER : lien page active (non-cliquable, souligné) ---- */
+.footer-link-current {
+  color: rgba(255,255,255,0.55);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: default;
+  font-size: 0.875rem;
+  line-height: 1.6;
 }

@@ -1,0 +1,1 @@
+tout les projets que j'ajoute viennent directement sur la page principale mais comme section realisation or la logique est que la page principale sur realisation affiche 2 ou 3 projets puis le boutons voir tout les projets affiche le restes de projets

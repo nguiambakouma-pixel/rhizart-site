@@ -1,7 +1,7 @@
-/* ============================================
-   RHIZART — cms-loader.js  v2
-   Lit projects.json via jsdelivr (zéro limite API)
-   Génère les cartes avec le style card v2
+﻿/* ============================================
+   RHIZART â€” cms-loader.js  v2
+   Lit projects.json via jsdelivr (zÃ©ro limite API)
+   GÃ©nÃ¨re les cartes avec le style card v2
    ============================================ */
 
 var JSDELIVR_BASE = 'https://cdn.jsdelivr.net/gh/nguiambakouma-pixel/rhizart-site@main/';
@@ -38,7 +38,7 @@ function formatCat(cat) {
 }
 
 /* ==========================================
-   STYLES INJECTÉS (loader, empty, spin)
+   STYLES INJECTÃ‰S (loader, empty, spin)
    ========================================== */
 (function injectStyles() {
   var style = document.createElement('style');
@@ -127,7 +127,7 @@ function renderPortfolio(projets) {
   grid.innerHTML = '';
 
   if (projets.length === 0) {
-    grid.innerHTML = '<p class="cms-empty">Aucun projet publié pour l\'instant.</p>';
+    grid.innerHTML = '<p class="cms-empty">Aucun projet publiÃ© pour l\'instant.</p>';
     return;
   }
 
@@ -142,7 +142,7 @@ function renderPortfolio(projets) {
 }
 
 /* ==========================================
-   APERÇU ACCUEIL (6 projets sur index.html)
+   APERÃ‡U ACCUEIL (6 projets sur index.html)
    ========================================== */
 function renderHomeApercu(projets) {
   var grid = document.getElementById('portfolioGrid');
@@ -157,12 +157,12 @@ function renderHomeApercu(projets) {
     grid.appendChild(card);
   });
 
-  /* Interactions légères pour l'accueil (lightbox seulement) */
+  /* Interactions lÃ©gÃ¨res pour l'accueil (lightbox seulement) */
   initLightbox(projets, grid);
 }
 
 /* ==========================================
-   METTRE À JOUR LES COMPTEURS FILTRES
+   METTRE Ã€ JOUR LES COMPTEURS FILTRES
    ========================================== */
 function updateCounts(projets) {
   var cats = ['branding', 'print', 'motion', 'illustration', 'social', 'packaging'];
@@ -282,7 +282,7 @@ function initLightbox(projets, grid) {
     var tag   = (item.querySelector('.pf-img-badge') || {}).textContent || '';
     var title = (item.querySelector('h3') || {}).textContent || '';
 
-    /* Chercher résultat dans les données */
+    /* Chercher rÃ©sultat dans les donnÃ©es */
     var proj = projets.find(function (p) { return p.slug === slug; });
     var desc = proj ? (proj.resultat || proj.description || '') : '';
 
@@ -332,7 +332,7 @@ function initLightbox(projets, grid) {
     if (lbIndex < v.length - 1) openLb(lbIndex + 1);
   });
 
-  /* Délégation d'événements sur la grille (zoom + clic card) */
+  /* DÃ©lÃ©gation d'Ã©vÃ©nements sur la grille (zoom + clic card) */
   grid.addEventListener('click', function (e) {
     var detailLink = e.target.closest('.pf-detail-btn');
     if (detailLink) return; /* laisser le lien naviguer */
@@ -373,8 +373,8 @@ function initLightbox(projets, grid) {
 
 
 /* ==========================================
-   CHARGEMENT ÉQUIPE → about.html
-   (Conservé, inchangé, lit toujours GitHub API
+   CHARGEMENT Ã‰QUIPE â†’ about.html
+   (ConservÃ©, inchangÃ©, lit toujours GitHub API
     car _equipe n'est pas dans projects.json)
    ========================================== */
 function loadEquipe() {
@@ -469,17 +469,17 @@ function loadEquipe() {
       joinCard.className = 'team-join';
       joinCard.innerHTML =
         '<div class="team-join-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>' +
-        '<div><h3>Vous voulez rejoindre l\'équipe ?</h3><p>On cherche toujours des talents passionnés. Envoyez-nous votre portfolio.</p></div>' +
-        '<a href="mailto:contact@rhizart.cm?subject=Candidature RHIZART" class="btn btn-primary">Candidater</a>';
+        '<div><h3>Vous voulez rejoindre l\'Ã©quipe ?</h3><p>On cherche toujours des talents passionnÃ©s. Envoyez-nous votre portfolio.</p></div>' +
+        '<a href="mailto:rhizart237@gmail.com?subject=Candidature RHIZART" class="btn btn-primary">Candidater</a>';
       grid.insertAdjacentElement('afterend', joinCard);
     })
-    .catch(function (err) { console.error('Erreur équipe:', err); });
+    .catch(function (err) { console.error('Erreur Ã©quipe:', err); });
 }
 
 
 /* ==========================================
-   CHARGEMENT TÉMOIGNAGES → index.html
-   (Conservé, inchangé)
+   CHARGEMENT TÃ‰MOIGNAGES â†’ index.html
+   (ConservÃ©, inchangÃ©)
    ========================================== */
 function loadTemoignages() {
   var grid = document.querySelector('.temoignages-grid');
@@ -530,7 +530,7 @@ function loadTemoignages() {
       grid.innerHTML = '';
       temos.forEach(function (t) {
         var note     = parseInt(t.note) || 5;
-        var stars    = '★'.repeat(note) + '☆'.repeat(5 - note);
+        var stars    = 'â˜…'.repeat(note) + 'â˜†'.repeat(5 - note);
         var initials = (t.nom || 'XX').split(' ').map(function (w) { return w[0]; }).join('').slice(0, 2).toUpperCase();
         var div = document.createElement('div');
         div.className = 'temoignage-card' + (t.featured ? ' temoignage-featured' : '');
@@ -547,12 +547,12 @@ function loadTemoignages() {
         grid.appendChild(div);
       });
     })
-    .catch(function (err) { console.error('Erreur témoignages:', err); });
+    .catch(function (err) { console.error('Erreur tÃ©moignages:', err); });
 }
 
 
 /* ==========================================
-   INIT — détecter la page et charger
+   INIT â€” dÃ©tecter la page et charger
    ========================================== */
 document.addEventListener('DOMContentLoaded', function () {
   var path = window.location.pathname;
@@ -573,22 +573,22 @@ document.addEventListener('DOMContentLoaded', function () {
       grid.innerHTML =
         '<div class="cms-loading">' +
         '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>' +
-        '<p>Chargement des projets…</p></div>';
+        '<p>Chargement des projetsâ€¦</p></div>';
     }
     fetchProjects()
       .then(renderPortfolio)
       .catch(function (err) {
         console.error('Erreur projects.json :', err);
-        if (grid) grid.innerHTML = '<p class="cms-empty">Impossible de charger les projets.<br>Vérifiez votre connexion.</p>';
+        if (grid) grid.innerHTML = '<p class="cms-empty">Impossible de charger les projets.<br>VÃ©rifiez votre connexion.</p>';
       });
   }
 
-  /* ---- Page about : charger l'équipe ---- */
+  /* ---- Page about : charger l'Ã©quipe ---- */
   if (isAbout) {
     loadEquipe();
   }
 
-  /* ---- Accueil : aperçu projets + témoignages ---- */
+  /* ---- Accueil : aperÃ§u projets + tÃ©moignages ---- */
   if (isHome) {
     loadTemoignages();
     if (document.getElementById('portfolioGrid')) {

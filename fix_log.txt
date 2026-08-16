@@ -1,0 +1,14 @@
+﻿    'nav-services': 'Services',
+    'nav-projets': 'Realisations',
+    'nav-processus': 'Notre m├®thode',
+    'nav-temoignages': 'T├®moignages',
+    'nav-contact': 'Contact',
+    'nav-about': '´┐¢ propos',
+    'nav-cta': 'D├®marrer un projet',
+    'nav-lang-fr': 'FR',
+    'nav-lang-en': 'EN',
+
+
+Total fixes: 0
+
+Verification (lines 14-23):
