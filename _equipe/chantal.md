@@ -11,5 +11,5 @@ bio: Conçoit et réalise des supports visuels percutants (infographies,
 competences:
   - "Accueillante, créative, "
 fondateur: false
-ordre: 1
+ordre: 58
 ---
